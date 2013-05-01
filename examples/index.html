@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:svg="http://www.w3.org/2000/svg">
+<head>
+    <meta charset="UTF-8" />
+    <title>Notificator </title>
+    <link rel="stylesheet" href="../notificator/jquery.notificator.css">
+    <link rel="stylesheet" href="style.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+  
+</head>
+<body>
+    
+  <button>notify me!</button>
+    
+    <script src="../notificator/jquery.notificator.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    
+    var messages = ["Format C done!", 
+            "Email sent!", 
+            "Milk ready", 
+            "update completed", 
+            "ok stop!"
+    ];
+    var welcome = ["hello you!", 
+            "welcome to the jquery plugin Notificator", 
+            "it will remember you everything!", 
+            "maybe", 
+            "i hope!", 
+            "enjoy :)!"
+    ];
+    var status = "notificator active";
+  
+    jQuery(function($){
+       function init() {
+            var c = 0;
+            function hello() {
+                $.notificator(welcome.shift());        
+                if (c<5){
+                    setTimeout(hello, 2500);
+                }
+                c+=1;
+                
+            }
+            setTimeout(hello, 1000);
+        }
+        init();
+      $("button").click(function(){
+        $.notificator(messages.shift() || status);
+      })
+    })
+  </script>
+</body>
+</html>
