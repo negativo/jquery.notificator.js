@@ -14,6 +14,8 @@
   <button>notify me!</button>
     
     <script src="../notificator/jquery.notificator.js" type="text/javascript" charset="utf-8"></script>
+  <button class="msg">notify me a message!</button>
+  <button class="error">notify me an error!</button>
   <script type="text/javascript" charset="utf-8">
     
     var messages = ["Format C done!", 
@@ -45,9 +47,14 @@
             setTimeout(hello, 1000);
         }
         init();
-      $("button").click(function(){
-        $.notificator(messages.shift() || status);
+      $("button.msg").click(function(){
+        $.notificator("Message: " + messages.shift() || status);
       })
+
+      $("button.error").click(function(){
+        $.notificator("Error: " + messages.shift() || status, 'error');
+      })
+
     })
   </script>
 </body>

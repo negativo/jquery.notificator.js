@@ -31,22 +31,30 @@
       overflow: hidden;
     }
 
-    #notificator .msg {
-      border: 1px solid #171717;
-      color: #E4E4E4;
-     
-    font-family: Arial;
+
+	#notificator div {
+      font-family: Arial;
       font-weight: bold;
       width: 200px;
       min-height: 30px;
       padding: 10px;
       font-size: 15px;
       margin-bottom: 10px;
-  
-      background: #e74c3c;
-      border:4px solid #c0392b;
-  
       border-radius: 7px;
       -webkit-border-radius: 7px;
       -moz-border-radius: 7px;
+	}
+
+    #notificator div.msg {
+      border: 1px solid #171717;
+      color: #E4E4E4;
+      background: #2d8a00;
+      border:4px solid #c0392b;
+    }
+
+    #notificator div.error {
+      border: 1px solid #171717;
+      color: #E4E4E4;
+      background: #e74c3c;
+      border:4px solid #c0392b;
     }
