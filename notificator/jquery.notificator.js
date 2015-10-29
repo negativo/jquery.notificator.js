@@ -4,8 +4,9 @@
       $(function(){
         $("body").append(container);
       });
-      $.notificator = function(string){
-        var tip = $("<div />").addClass("msg");
+      $.notificator = function(string, cssClass){
+        if (typeof cssClass == 'undefined') { cssClass = 'msg'; }
+        var tip = $("<div />").addClass(cssClass);
         tip.html(string);
         container.append(tip);
         tip.show("drop", {
